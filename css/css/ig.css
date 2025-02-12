@@ -112,6 +112,18 @@ a {
   cursor: pointer;
 }
 
+.hm_votebutton {
+  border: 1px solid #000;
+  background-color: #000;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
 .orr {
   position: relative;
   text-align: center;
