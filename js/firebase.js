@@ -1,12 +1,12 @@
 // Initialize Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyBbUU09utuXs5R5JtUg59j5AnGHXSIZ59I",
-  authDomain: "ochwettbewerb.firebaseapp.com",
-  databaseURL: "https://ochwettbewerb-default-rtdb.firebaseio.com",
-  projectId: "ochwettbewerb",
-  storageBucket: "ochwettbewerb.appspot.com",
-  messagingSenderId: "74662926991",
-  appId: "1:74662926991:web:16e9e997d35848e88caefa",
+  apiKey: "AIzaSyCw-c5ssNHmzEsIJ_xEu9i_Z-misRPkoLM",
+  authDomain: "foodnitr.firebaseapp.com",
+  databaseURL: "https://foodnitr-default-rtdb.firebaseio.com",
+  projectId: "foodnitr",
+  storageBucket: "foodnitr.firebasestorage.app",
+  messagingSenderId: "197828384790",
+  appId: "1:197828384790:web:8531d194ca4a244200bd37"
 };
 firebase.initializeApp(firebaseConfig);
 
