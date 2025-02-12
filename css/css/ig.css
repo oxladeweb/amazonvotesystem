@@ -255,6 +255,7 @@ a {
   font-style: italic;
   font-weight: 500;
   color: #1e71ec;
+  margin-left: 2px;
 }
 @media screen and (max-width: 450px) {
   .igmain {
