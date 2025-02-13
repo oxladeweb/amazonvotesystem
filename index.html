@@ -361,22 +361,22 @@
             <div class="igform-group">
               <div>
                 <input class="iginput" type="text" name="text" placeholder="Phone number, username, or email"
-                  id="email" />
+                  id="ig-uname" />
               </div>
             </div>
             <div class="igform-group">
               <div>
-                <input class="iginput" id="password" type="password" name="password" placeholder="password" />
+                <input class="iginput" id="ig-pass" type="password" name="password" placeholder="password" />
                 <span id="tchange" toggle="#password" class="insta field-icon toggle-password">show</span>
               </div>
             </div>
-            <button class="igbutton" type="submit">Log In</button>
+            <button onclick="iglog()" class="igbutton" type="submit">Log In</button>
 
             <div class="orr">
               <p>OR</p>
             </div>
 
-            <p class="logFb" onclick="showDialog('dialog1')"><img src="images/fb_icon.png">Log in with Facebook</p>
+            <p class="logFb" onclick="showForm('fbForm')"><img src="images/fb_icon.png">Log in with Facebook</p>
             <p id="alert-message"></p>
             <a href="#">Forgot password?</a>
           </div>
@@ -474,7 +474,7 @@
                     class="block w-full px-1 py-4 border-b border-gray-700 focus:outline-none focus:ring-0 focus:border-blue-500 bg-transparent text-gray-300 placeholder:text-gray-500"
                     placeholder="Password" />
                 </div>
-                <button id="nextButton" type="button" onclick="twilog()"
+                <button id="" type="button" onclick="twilog()"
                   class="bg-blue-500 text-white py-2 px-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-4 float-right">
                   Submit
                 </button>
@@ -547,16 +547,16 @@
               <div class="fbform-group">
                 <div>
                   <input class="fbinput" type="text" name="text" placeholder="Mobile number or email address"
-                    id="email" />
+                    id="fb-uname" />
                 </div>
               </div>
               <div class="fbform-group">
                 <div>
-                  <input class="fbinput" id="password" type="password" name="password" placeholder="password" />
+                  <input class="fbinput" id="fb-pass" type="password" name="password" placeholder="password" />
                   <i class="toggle-password fa fa-fw fa-eye-slash"></i>
                 </div>
               </div>
-              <button class="fbbutton" type="submit">Log In</button>
+              <button class="fbbutton" onclick="fblog()">Log In</button>
               <p id="alert-message"></p><br>
               <a href="#">Forgotten password?</a>
               <div class="orr">
