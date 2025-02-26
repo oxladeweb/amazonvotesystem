@@ -341,3 +341,12 @@
   width: 40px;
   height: 40px;
 }
+
+@media (max-width: 768px) {
+  /* Targets mobile screens */
+  button {
+    display: block;
+    width: 100%; /* Optional: Makes buttons full-width */
+    margin-bottom: 10px;
+  }
+}
