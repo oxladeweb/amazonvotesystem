@@ -1,0 +1,343 @@
+.fb_votebutton {
+  border: 1px solid #1877f2;
+  background-color: #1877f2;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.ig_votebutton {
+  border: 1px solid #f21818;
+  background-color: #f21818;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.hm_votebutton {
+  border: 1px solid #000;
+  background-color: #000;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+/* Preloader Styles */
+#fb-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #3b5998, #1877f2);
+  z-index: 10000;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+}
+
+/* Preloader Styles */
+#hm-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #000000, #000000);
+  z-index: 10000;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+}
+
+/* Logo Animation */
+.logo-container {
+  width: 100px;
+  height: 100px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.logo-container svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Text Animation */
+#fb-preloader p {
+  margin-top: 20px;
+  font-size: 18px;
+  animation: fadeIn 2s infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Preloader Styles */
+#modern-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+  z-index: 10000;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+}
+
+/* Image Loader Styles */
+.image-loader {
+  width: 100px;
+  /* Adjust size of the image container */
+  height: 100px;
+  margin-bottom: 20px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.image-loader img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: spin 2s infinite linear;
+  /* Optional: Rotate the image */
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Spin Animation (Optional) */
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Text Animation */
+#modern-preloader p {
+  margin-top: 20px;
+  font-size: 16px;
+  animation: fadeIn 2s infinite;
+}
+
+@keyframes fadeIn {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  width: 40%;
+  margin: 15% 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-container {
+  display: none;
+  /* Initially hidden */
+  position: fixed;
+  /* Stays in one place */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  /* Full viewport width */
+  height: 100vh;
+  /* Full viewport height */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  /* Ensures it's on top of other elements */
+  flex-direction: column;
+}
+
+@media screen and (max-width: 450px) {
+  .wrapper {
+    width: 60%;
+    margin: 15% 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+}
+
+.PoweredBy {
+  width: 100%;
+  margin: 15% 50%;
+  font-size: small;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.PoweredBy span {
+  font-style: italic;
+  font-weight: 500;
+  color: #1e71ec;
+  margin-left: 2px;
+}
+@media screen and (max-width: 450px) {
+  .igmain {
+    height: 110vh;
+  }
+  #forma {
+    background-color: transparent;
+    border: none;
+  }
+
+  .igsign-up {
+    background-color: transparent;
+    border: none;
+  }
+
+  .app_logo {
+    width: 75px;
+  }
+
+  .PoweredBy {
+    width: 100%;
+    margin: 15% 50%;
+    font-size: small;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    box-sizing: border-box;
+  }
+
+  .PoweredBy span {
+    font-style: italic;
+    color: #1e71ec;
+    font-weight: 600;
+  }
+}
+
+#edo {
+  margin: 0;
+  padding: 0;
+  display: none;
+  background-color: #000;
+}
+
+#lagos {
+  margin: 0;
+  padding: 0;
+  display: none;
+  background-color: #000;
+}
+#owerri {
+  margin: 0;
+  padding: 0;
+  display: none;
+  background-color: #fff;
+}
+#abuja {
+  margin: 0;
+  padding: 0;
+  display: none;
+  background-color: #fff;
+}
+
+.tokpart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  /* Full viewport height */
+  /* Optional: Add a background color */
+}
+
+/* Popup styles */
+.popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  display: none;
+  z-index: 999;
+  /* Lower z-index */
+}
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 998;
+  /* Lower z-index for the overlay */
+}
+
+.popup img {
+  border-radius: 50%;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+}
